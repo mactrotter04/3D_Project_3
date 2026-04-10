@@ -4,21 +4,26 @@ using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour
 {
+    [Header("Input Actions")]
     [SerializeField] InputAction movement;
+
+    [Header("Gun Settings")]
     [SerializeField] InputAction fire;
+    [SerializeField] GameObject[] guns;
+
+    [Header("Movement Settings")]
     [SerializeField] float speed = 10f;
     [SerializeField] float xRange = 10f;
     [SerializeField] float yRange = 7f;
 
+    [Header("Smooth Movement Between Points")]
     [SerializeField] float positionPitchFactor = -2f;
     [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float positionYawFactor = 2f;
     [SerializeField] float controlRollFactor = -20f;
 
-    [SerializeField] GameObject[] guns;
-
-
     float xThrow, yThrow;
+
     void OnEnable()
     {
         movement.Enable();
@@ -79,12 +84,12 @@ public class playerController : MonoBehaviour
     {
         if (fire.ReadValue<float>() > 0.5f)
         {
-            Debug.Log("Fireing!");
+            //Debug.Log("Fireing!");
             SetGunsActive(true);
         }
         else
         {
-            Debug.Log("Not Fireing!");
+            //Debug.Log("Not Fireing!");
             SetGunsActive(false);
         }
     }
