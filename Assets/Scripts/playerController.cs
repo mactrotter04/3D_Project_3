@@ -10,6 +10,9 @@ public class playerController : MonoBehaviour
     [Header("Gun Settings")]
     [SerializeField] InputAction fire;
     [SerializeField] GameObject[] guns;
+   
+    AudioSource audioSource;
+
 
     [Header("Movement Settings")]
     [SerializeField] float speed = 10f;
@@ -39,7 +42,7 @@ public class playerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -86,11 +89,13 @@ public class playerController : MonoBehaviour
         {
             //Debug.Log("Fireing!");
             SetGunsActive(true);
+            audioSource.Play();
         }
         else
         {
             //Debug.Log("Not Fireing!");
             SetGunsActive(false);
+            audioSource.Stop();
         }
     }
 

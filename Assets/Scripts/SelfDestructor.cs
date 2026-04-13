@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public class SelfDestructor : MonoBehaviour
 {
-    [SerializeField] float timeToDestroy = 5f;
+    [SerializeField] float timeToDestroy = 2f;
 
     void Start()
     {

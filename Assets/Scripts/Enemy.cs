@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     GameObject particlesParent;
 
     [SerializeField] int scorePerKill = 10;
-    [SerializeField] int hitPoints = 2;
+    [SerializeField] int hitPoints = 4;
 
     ScoreBoard scoreBoard;
 
